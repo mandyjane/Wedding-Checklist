@@ -1379,6 +1379,7 @@
     "legal-5": true,
     "ven-5": true,
     "gr-1": true,
-    "gr-3": true
+    "gr-3": false,
+    "gm-1": true
   }
 }
