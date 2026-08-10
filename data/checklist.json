@@ -1338,6 +1338,8 @@
     "ph-12": true,
     "mus-1": true,
     "cer-1": false,
-    "cer-10": true
+    "cer-10": false,
+    "cer-9": true,
+    "rec-5": true
   }
 }
