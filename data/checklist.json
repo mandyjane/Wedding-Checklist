@@ -515,40 +515,6 @@
       ]
     },
     {
-      "id": "video",
-      "title": "Videography",
-      "items": [
-        {
-          "id": "vid-1",
-          "text": "Decide if hiring a videographer"
-        },
-        {
-          "id": "vid-2",
-          "text": "Book videographer"
-        },
-        {
-          "id": "vid-3",
-          "text": "Discuss style: cinematic, documentary, highlight?"
-        },
-        {
-          "id": "vid-4",
-          "text": "Confirm coverage hours"
-        },
-        {
-          "id": "vid-5",
-          "text": "Drone footage — check Hillstone / council rules"
-        },
-        {
-          "id": "vid-6",
-          "text": "Confirm turnaround and deliverables"
-        },
-        {
-          "id": "vid-7",
-          "text": "Coordinate with photographer"
-        }
-      ]
-    },
-    {
       "id": "music",
       "title": "Music & Entertainment",
       "items": [
