@@ -1,0 +1,1389 @@
+{
+  "sections": [
+    {
+      "id": "legal",
+      "title": "Legal & Admin",
+      "items": [
+        {
+          "id": "legal-1",
+          "text": "Lodge Notice of Intended Marriage (NOIM) — must be lodged 1–18 months before"
+        },
+        {
+          "id": "legal-2",
+          "text": "Confirm NOIM is lodged and accepted"
+        },
+        {
+          "id": "legal-3",
+          "text": "Obtain birth certificates or proof of identity for both parties"
+        },
+        {
+          "id": "legal-4",
+          "text": "If previously married — obtain divorce certificate or death certificate"
+        },
+        {
+          "id": "legal-5",
+          "text": "Arrange witnesses (minimum 2 adults) for signing on the day"
+        },
+        {
+          "id": "legal-6",
+          "text": "Confirm celebrant has your legal paperwork sorted"
+        },
+        {
+          "id": "legal-7",
+          "text": "Wedding insurance (weather, vendor no-shows, illness)"
+        },
+        {
+          "id": "legal-8",
+          "text": "Name change checklist ready (licence, passport, bank, Medicare, super, employer, ATO)"
+        }
+      ]
+    },
+    {
+      "id": "celebrant",
+      "title": "Celebrant / Officiant",
+      "items": [
+        {
+          "id": "cel-1",
+          "text": "Book registered celebrant"
+        },
+        {
+          "id": "cel-2",
+          "text": "Confirm celebrant availability for 14 Oct 2026"
+        },
+        {
+          "id": "cel-3",
+          "text": "Meet to discuss ceremony structure and vows"
+        },
+        {
+          "id": "cel-4",
+          "text": "Decide: traditional vows, personal vows, or a mix"
+        },
+        {
+          "id": "cel-5",
+          "text": "Write personal vows — allow weeks, not days"
+        },
+        {
+          "id": "cel-6",
+          "text": "Choose readings or poems (and who will read them)"
+        },
+        {
+          "id": "cel-7",
+          "text": "Discuss any cultural or religious elements"
+        },
+        {
+          "id": "cel-8",
+          "text": "Confirm ceremony rehearsal date/time"
+        },
+        {
+          "id": "cel-9",
+          "text": "Confirm celebrant's fee and payment schedule"
+        },
+        {
+          "id": "cel-10",
+          "text": "Provide correct name pronunciations"
+        },
+        {
+          "id": "cel-11",
+          "text": "Confirm PA/microphone needs for courtyard ceremony"
+        }
+      ]
+    },
+    {
+      "id": "venue",
+      "title": "Venue — Hillstone St Lucia",
+      "items": [
+        {
+          "id": "ven-1",
+          "text": "Confirm final guest count (and cutoff date for changes)"
+        },
+        {
+          "id": "ven-2",
+          "text": "Confirm courtyard ceremony setup — aisle, seating, arch placement"
+        },
+        {
+          "id": "ven-3",
+          "text": "Confirm Rosewood Room layout — tables, cake table, gift table, DJ position"
+        },
+        {
+          "id": "ven-4",
+          "text": "Confirm Library Bar setup for cocktail hour and dancing"
+        },
+        {
+          "id": "ven-5",
+          "text": "Ask about wet weather backup for courtyard ceremony"
+        },
+        {
+          "id": "ven-6",
+          "text": "Confirm setup access time on the day"
+        },
+        {
+          "id": "ven-7",
+          "text": "Confirm pack-down expectations — who collects décor and by when"
+        },
+        {
+          "id": "ven-8",
+          "text": "Confirm AV equipment (microphone, speakers, projector)"
+        },
+        {
+          "id": "ven-9",
+          "text": "Ask about power outlet locations"
+        },
+        {
+          "id": "ven-10",
+          "text": "Confirm parking and guest parking instructions"
+        },
+        {
+          "id": "ven-11",
+          "text": "Confirm accessibility (wheelchair, step-free paths)"
+        },
+        {
+          "id": "ven-12",
+          "text": "Confirm noise curfew / music cut-off time"
+        },
+        {
+          "id": "ven-13",
+          "text": "Confirm bridal suite or getting-ready room"
+        },
+        {
+          "id": "ven-14",
+          "text": "Discuss candle / open flame policy"
+        },
+        {
+          "id": "ven-15",
+          "text": "Confirm confetti / petal toss policy"
+        },
+        {
+          "id": "ven-16",
+          "text": "Confirm vendor load-in access"
+        }
+      ]
+    },
+    {
+      "id": "catering",
+      "title": "Catering & Drinks (via Hillstone)",
+      "items": [
+        {
+          "id": "cat-1",
+          "text": "Finalise menu selections (entrée, main, dessert)"
+        },
+        {
+          "id": "cat-2",
+          "text": "Confirm canapés for Library Bar cocktail hour"
+        },
+        {
+          "id": "cat-3",
+          "text": "Submit dietary requirements and allergies"
+        },
+        {
+          "id": "cat-4",
+          "text": "Confirm kids' meal options"
+        },
+        {
+          "id": "cat-5",
+          "text": "Confirm beverage package"
+        },
+        {
+          "id": "cat-6",
+          "text": "Arrange signature cocktail if desired"
+        },
+        {
+          "id": "cat-7",
+          "text": "Confirm cake cutting — served as dessert or separate?"
+        },
+        {
+          "id": "cat-8",
+          "text": "Confirm late-night snack if reception runs late"
+        },
+        {
+          "id": "cat-9",
+          "text": "Confirm vendor meals (photographer, DJ, etc.)"
+        },
+        {
+          "id": "cat-10",
+          "text": "Tasting appointment"
+        },
+        {
+          "id": "cat-11",
+          "text": "Final catering numbers deadline — put in calendar"
+        }
+      ]
+    },
+    {
+      "id": "bride",
+      "title": "Bride — Attire & Accessories",
+      "items": [
+        {
+          "id": "br-1",
+          "text": "Wedding dress purchased"
+        },
+        {
+          "id": "br-2",
+          "text": "Dress fittings scheduled (final ~2 weeks before)"
+        },
+        {
+          "id": "br-3",
+          "text": "Undergarments to suit dress"
+        },
+        {
+          "id": "br-4",
+          "text": "Shoes — broken in before the day"
+        },
+        {
+          "id": "br-5",
+          "text": "Veil or headpiece"
+        },
+        {
+          "id": "br-6",
+          "text": "Jewellery — earrings, necklace, bracelet, hair accessories"
+        },
+        {
+          "id": "br-7",
+          "text": "Something old, new, borrowed, blue"
+        },
+        {
+          "id": "br-8",
+          "text": "Garter"
+        },
+        {
+          "id": "br-9",
+          "text": "Wedding day perfume"
+        },
+        {
+          "id": "br-10",
+          "text": "Getting-ready robe (for morning-of photos)"
+        },
+        {
+          "id": "br-11",
+          "text": "Emergency kit: fashion tape, safety pins, stain remover, blister plasters, paracetamol, tissues, deodorant, breath mints"
+        },
+        {
+          "id": "br-12",
+          "text": "Nice dress hanger for photos"
+        },
+        {
+          "id": "br-13",
+          "text": "Clutch for reception"
+        },
+        {
+          "id": "br-14",
+          "text": "Comfy shoes for dancing"
+        },
+        {
+          "id": "br-15",
+          "text": "Rehearsal dinner outfit"
+        },
+        {
+          "id": "br-16",
+          "text": "Arrange dress pressing/steaming"
+        },
+        {
+          "id": "br-17",
+          "text": "Plan dress preservation after wedding"
+        }
+      ]
+    },
+    {
+      "id": "groom",
+      "title": "Groom — Attire & Accessories",
+      "items": [
+        {
+          "id": "gr-1",
+          "text": "Suit/tux — purchased, hired, or tailored"
+        },
+        {
+          "id": "gr-2",
+          "text": "Final fitting (2–3 weeks before)"
+        },
+        {
+          "id": "gr-3",
+          "text": "Shirt, tie/bow tie, pocket square"
+        },
+        {
+          "id": "gr-4",
+          "text": "Shoes — polished and broken in"
+        },
+        {
+          "id": "gr-5",
+          "text": "Belt or suspenders"
+        },
+        {
+          "id": "gr-6",
+          "text": "Cufflinks and watch"
+        },
+        {
+          "id": "gr-7",
+          "text": "Socks"
+        },
+        {
+          "id": "gr-8",
+          "text": "Haircut scheduled ~1 week before"
+        },
+        {
+          "id": "gr-9",
+          "text": "Cologne"
+        },
+        {
+          "id": "gr-10",
+          "text": "Getting-ready outfit for photos"
+        }
+      ]
+    },
+    {
+      "id": "bridesmaids",
+      "title": "Bridesmaids (×3)",
+      "items": [
+        {
+          "id": "bm-1",
+          "text": "Bridesmaid dresses chosen and ordered"
+        },
+        {
+          "id": "bm-2",
+          "text": "Fittings / alterations booked"
+        },
+        {
+          "id": "bm-3",
+          "text": "Shoes — confirm colour/style"
+        },
+        {
+          "id": "bm-4",
+          "text": "Jewellery or accessories"
+        },
+        {
+          "id": "bm-5",
+          "text": "Getting-ready robes (for photos)"
+        },
+        {
+          "id": "bm-6",
+          "text": "Hair & makeup included in bookings?"
+        },
+        {
+          "id": "bm-7",
+          "text": "Bridesmaid gifts"
+        },
+        {
+          "id": "bm-8",
+          "text": "Brief on duties: dress help, bouquet, bustle, aisle lineup"
+        },
+        {
+          "id": "bm-9",
+          "text": "Confirm each has their bouquet allocated"
+        }
+      ]
+    },
+    {
+      "id": "flowergirls",
+      "title": "Flower Girls (×3)",
+      "items": [
+        {
+          "id": "fg-1",
+          "text": "Flower girl dresses — chosen, ordered, fitted"
+        },
+        {
+          "id": "fg-2",
+          "text": "Shoes for each"
+        },
+        {
+          "id": "fg-3",
+          "text": "Hair accessories — crowns, clips, ribbons"
+        },
+        {
+          "id": "fg-4",
+          "text": "What will they carry? (petals, wands, hoops, sign)"
+        },
+        {
+          "id": "fg-5",
+          "text": "Practice walking the aisle at rehearsal"
+        },
+        {
+          "id": "fg-6",
+          "text": "Assign an adult wrangler for ceremony"
+        },
+        {
+          "id": "fg-7",
+          "text": "Kid-friendly snacks and activities for reception"
+        },
+        {
+          "id": "fg-8",
+          "text": "Flower girl gifts"
+        },
+        {
+          "id": "fg-9",
+          "text": "Confirm parents are okay with timeline/duties"
+        }
+      ]
+    },
+    {
+      "id": "groomsmen",
+      "title": "Groomsmen / Groom's Party",
+      "items": [
+        {
+          "id": "gm-1",
+          "text": "Suits — matching or coordinated with groom"
+        },
+        {
+          "id": "gm-2",
+          "text": "Ties, pocket squares, shoes, socks"
+        },
+        {
+          "id": "gm-3",
+          "text": "Boutonnieres allocated (×4 — groom, best man, groomsmen, fathers?)"
+        },
+        {
+          "id": "gm-4",
+          "text": "Groomsmen gifts"
+        },
+        {
+          "id": "gm-5",
+          "text": "Brief on duties: ring, ushering, speeches, positions"
+        },
+        {
+          "id": "gm-6",
+          "text": "Haircuts / grooming reminder"
+        }
+      ]
+    },
+    {
+      "id": "hair-makeup",
+      "title": "Hair & Makeup",
+      "items": [
+        {
+          "id": "hm-1",
+          "text": "Book hair stylist"
+        },
+        {
+          "id": "hm-2",
+          "text": "Book makeup artist"
+        },
+        {
+          "id": "hm-3",
+          "text": "Hair trial — bring veil/headpiece and dress photos"
+        },
+        {
+          "id": "hm-4",
+          "text": "Makeup trial — bring dress swatch and jewellery"
+        },
+        {
+          "id": "hm-5",
+          "text": "Confirm who's included: bride, bridesmaids, mothers, flower girls?"
+        },
+        {
+          "id": "hm-6",
+          "text": "Create morning-of schedule (who goes first/last)"
+        },
+        {
+          "id": "hm-7",
+          "text": "Confirm location — does artist come to you?"
+        },
+        {
+          "id": "hm-8",
+          "text": "Touch-up kit: lipstick, powder, setting spray, bobby pins"
+        },
+        {
+          "id": "hm-9",
+          "text": "Confirm total cost and payment"
+        }
+      ]
+    },
+    {
+      "id": "photo",
+      "title": "Photography",
+      "items": [
+        {
+          "id": "ph-1",
+          "text": "Book photographer"
+        },
+        {
+          "id": "ph-2",
+          "text": "Engagement shoot"
+        },
+        {
+          "id": "ph-3",
+          "text": "Discuss coverage hours"
+        },
+        {
+          "id": "ph-4",
+          "text": "Second shooter needed?"
+        },
+        {
+          "id": "ph-5",
+          "text": "Create shot list: family groups, bridal party, details"
+        },
+        {
+          "id": "ph-6",
+          "text": "Scout locations at Hillstone"
+        },
+        {
+          "id": "ph-7",
+          "text": "Golden hour timing (sunset ~6pm Oct Brisbane)"
+        },
+        {
+          "id": "ph-8",
+          "text": "Confirm turnaround time"
+        },
+        {
+          "id": "ph-9",
+          "text": "Photo delivery — gallery, USB, prints?"
+        },
+        {
+          "id": "ph-10",
+          "text": "Social media sharing policy"
+        },
+        {
+          "id": "ph-11",
+          "text": "Family photo combo list"
+        },
+        {
+          "id": "ph-12",
+          "text": "Designate someone to wrangle family for group shots"
+        },
+        {
+          "id": "ph-13",
+          "text": "First-look plan — timing and location"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "title": "Videography",
+      "items": [
+        {
+          "id": "vid-1",
+          "text": "Decide if hiring a videographer"
+        },
+        {
+          "id": "vid-2",
+          "text": "Book videographer"
+        },
+        {
+          "id": "vid-3",
+          "text": "Discuss style: cinematic, documentary, highlight?"
+        },
+        {
+          "id": "vid-4",
+          "text": "Confirm coverage hours"
+        },
+        {
+          "id": "vid-5",
+          "text": "Drone footage — check Hillstone / council rules"
+        },
+        {
+          "id": "vid-6",
+          "text": "Confirm turnaround and deliverables"
+        },
+        {
+          "id": "vid-7",
+          "text": "Coordinate with photographer"
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "title": "Music & Entertainment",
+      "items": [
+        {
+          "id": "mus-1",
+          "text": "Book DJ or live band"
+        },
+        {
+          "id": "mus-2",
+          "text": "Ceremony — processional song"
+        },
+        {
+          "id": "mus-3",
+          "text": "Ceremony — pre-ceremony/seating music"
+        },
+        {
+          "id": "mus-4",
+          "text": "Ceremony — signing of the register"
+        },
+        {
+          "id": "mus-5",
+          "text": "Ceremony — recessional song"
+        },
+        {
+          "id": "mus-6",
+          "text": "Cocktail hour music — Library Bar"
+        },
+        {
+          "id": "mus-7",
+          "text": "Reception entrance song"
+        },
+        {
+          "id": "mus-8",
+          "text": "First dance song"
+        },
+        {
+          "id": "mus-9",
+          "text": "Father-daughter / mother-son dance"
+        },
+        {
+          "id": "mus-10",
+          "text": "Cake cutting song"
+        },
+        {
+          "id": "mus-11",
+          "text": "Last dance / send-off song"
+        },
+        {
+          "id": "mus-12",
+          "text": "Do-not-play list"
+        },
+        {
+          "id": "mus-13",
+          "text": "Must-play list"
+        },
+        {
+          "id": "mus-14",
+          "text": "Confirm DJ/band power and space needs with venue"
+        },
+        {
+          "id": "mus-15",
+          "text": "Photo booth or other entertainment"
+        },
+        {
+          "id": "mus-16",
+          "text": "Kids' entertainment (colouring, games)"
+        }
+      ]
+    },
+    {
+      "id": "ceremony",
+      "title": "Ceremony — Courtyard Garden",
+      "items": [
+        {
+          "id": "cer-1",
+          "text": "Ceremony arch or arbour"
+        },
+        {
+          "id": "cer-2",
+          "text": "Aisle runner"
+        },
+        {
+          "id": "cer-3",
+          "text": "Aisle decorations — lanterns, petals, shepherd hooks"
+        },
+        {
+          "id": "cer-4",
+          "text": "Confirm seating layout and reserved signs"
+        },
+        {
+          "id": "cer-5",
+          "text": "Reserved seating signs for front rows"
+        },
+        {
+          "id": "cer-6",
+          "text": "Unity ceremony element (sand, candle, handfasting?)"
+        },
+        {
+          "id": "cer-7",
+          "text": "Ring pillow or ring box"
+        },
+        {
+          "id": "cer-8",
+          "text": "Who carries the rings?"
+        },
+        {
+          "id": "cer-9",
+          "text": "Petal toss or confetti — check venue policy"
+        },
+        {
+          "id": "cer-10",
+          "text": "Ceremony program"
+        },
+        {
+          "id": "cer-11",
+          "text": "Welcome sign"
+        },
+        {
+          "id": "cer-12",
+          "text": "Unplugged ceremony sign"
+        },
+        {
+          "id": "cer-13",
+          "text": "Memorial tribute for absent loved ones"
+        },
+        {
+          "id": "cer-14",
+          "text": "PA system / speakers"
+        },
+        {
+          "id": "cer-15",
+          "text": "Rehearsal walkthrough scheduled"
+        },
+        {
+          "id": "cer-16",
+          "text": "Processional order decided"
+        },
+        {
+          "id": "cer-17",
+          "text": "Who walks the bride down the aisle?"
+        },
+        {
+          "id": "cer-18",
+          "text": "Signing table — pen, witnesses confirmed"
+        }
+      ]
+    },
+    {
+      "id": "reception",
+      "title": "Reception — Rosewood Room & Library Bar",
+      "items": [
+        {
+          "id": "rec-1",
+          "text": "Seating chart created"
+        },
+        {
+          "id": "rec-2",
+          "text": "Seating chart display (printed, mirror, acrylic?)"
+        },
+        {
+          "id": "rec-3",
+          "text": "Place cards for each guest"
+        },
+        {
+          "id": "rec-4",
+          "text": "Table numbers or names"
+        },
+        {
+          "id": "rec-5",
+          "text": "Guest book"
+        },
+        {
+          "id": "rec-6",
+          "text": "Gift/card box or wishing well sign"
+        },
+        {
+          "id": "rec-7",
+          "text": "MC — who is running the reception?"
+        },
+        {
+          "id": "rec-8",
+          "text": "Speeches — confirm who and what order"
+        },
+        {
+          "id": "rec-9",
+          "text": "Brief speakers on time limits"
+        },
+        {
+          "id": "rec-10",
+          "text": "Reception timeline: entrances, food, speeches, dances, cake, send-off"
+        },
+        {
+          "id": "rec-11",
+          "text": "Cake table setup — stand, knife, topper"
+        },
+        {
+          "id": "rec-12",
+          "text": "Guest favours"
+        },
+        {
+          "id": "rec-13",
+          "text": "Menu cards on tables"
+        },
+        {
+          "id": "rec-14",
+          "text": "Bar signage for Library Bar"
+        },
+        {
+          "id": "rec-15",
+          "text": "Send-off plan — sparklers, bubbles, tunnel?"
+        },
+        {
+          "id": "rec-16",
+          "text": "Who collects personal items at end of night?"
+        }
+      ]
+    },
+    {
+      "id": "florals",
+      "title": "DIY Silk Florals",
+      "items": [
+        {
+          "id": "fl-1",
+          "text": "Colour palette and flower types finalised"
+        },
+        {
+          "id": "fl-2",
+          "text": "All silk flowers, greenery, fillers purchased"
+        },
+        {
+          "id": "fl-3",
+          "text": "Supplies: floral foam, wire, tape, ribbon, hot glue, tools"
+        },
+        {
+          "id": "fl-4",
+          "text": "Vases for 2× large 50cm arrangements"
+        },
+        {
+          "id": "fl-5",
+          "text": "Vessels for 10× table centrepieces"
+        },
+        {
+          "id": "fl-6",
+          "text": "Bouquet holders for bridal + 3 bridesmaid bouquets"
+        },
+        {
+          "id": "fl-7",
+          "text": "Boutonniere pins and supplies (×4)"
+        },
+        {
+          "id": "fl-8",
+          "text": "Ribbon/wrap for bouquet stems"
+        },
+        {
+          "id": "fl-9",
+          "text": "Practice — make a test centrepiece first"
+        },
+        {
+          "id": "fl-10",
+          "text": "Build bridal bouquet"
+        },
+        {
+          "id": "fl-11",
+          "text": "Build 3× bridesmaid bouquets"
+        },
+        {
+          "id": "fl-12",
+          "text": "Build 4× boutonnieres"
+        },
+        {
+          "id": "fl-13",
+          "text": "Build 10× table centrepieces"
+        },
+        {
+          "id": "fl-14",
+          "text": "Build 2× large 50cm vase arrangements"
+        },
+        {
+          "id": "fl-15",
+          "text": "Ceremony arch florals"
+        },
+        {
+          "id": "fl-16",
+          "text": "Cake florals"
+        },
+        {
+          "id": "fl-17",
+          "text": "Flower girl accessories — crowns, wands, baskets?"
+        },
+        {
+          "id": "fl-18",
+          "text": "Corsages for mothers / grandmothers"
+        },
+        {
+          "id": "fl-19",
+          "text": "Storage — boxes, tissue, safe keeping"
+        },
+        {
+          "id": "fl-20",
+          "text": "Transport plan for centrepieces + large vases"
+        },
+        {
+          "id": "fl-21",
+          "text": "Assign someone to place arrangements on the day"
+        },
+        {
+          "id": "fl-22",
+          "text": "Steam/reshape any crushed flowers after transport"
+        }
+      ]
+    },
+    {
+      "id": "decor",
+      "title": "Additional Décor",
+      "items": [
+        {
+          "id": "dec-1",
+          "text": "Overall colour scheme and aesthetic confirmed"
+        },
+        {
+          "id": "dec-2",
+          "text": "Table linens — cloths, runners, napkins (or venue-supplied?)"
+        },
+        {
+          "id": "dec-3",
+          "text": "Candles — pillar, taper, tealight, LED (venue policy?)"
+        },
+        {
+          "id": "dec-4",
+          "text": "Candle holders / votives"
+        },
+        {
+          "id": "dec-5",
+          "text": "Fairy lights or string lights"
+        },
+        {
+          "id": "dec-6",
+          "text": "Cake topper"
+        },
+        {
+          "id": "dec-7",
+          "text": "Card box / wishing well"
+        },
+        {
+          "id": "dec-8",
+          "text": "Easels for signs"
+        },
+        {
+          "id": "dec-9",
+          "text": "Welcome sign"
+        },
+        {
+          "id": "dec-10",
+          "text": "All signage: bar, seating, hashtag, guest book, gifts"
+        },
+        {
+          "id": "dec-11",
+          "text": "Photo backdrop or feature wall"
+        },
+        {
+          "id": "dec-12",
+          "text": "Confirm venue supplies vs what you're bringing"
+        }
+      ]
+    },
+    {
+      "id": "stationery",
+      "title": "Stationery & Signage",
+      "items": [
+        {
+          "id": "st-1",
+          "text": "Save the dates — sent"
+        },
+        {
+          "id": "st-2",
+          "text": "Invitations sent (8–10 weeks before)"
+        },
+        {
+          "id": "st-3",
+          "text": "RSVP tracking system set up"
+        },
+        {
+          "id": "st-4",
+          "text": "RSVP deadline set"
+        },
+        {
+          "id": "st-5",
+          "text": "Chase non-responders"
+        },
+        {
+          "id": "st-6",
+          "text": "Ceremony programs"
+        },
+        {
+          "id": "st-7",
+          "text": "Menu cards"
+        },
+        {
+          "id": "st-8",
+          "text": "Place cards"
+        },
+        {
+          "id": "st-9",
+          "text": "Table numbers"
+        },
+        {
+          "id": "st-10",
+          "text": "Thank-you cards ordered"
+        },
+        {
+          "id": "st-11",
+          "text": "Directional signs (ceremony → reception, toilets)"
+        }
+      ]
+    },
+    {
+      "id": "cake",
+      "title": "Cake & Desserts",
+      "items": [
+        {
+          "id": "ck-1",
+          "text": "Wedding cake ordered — flavour, tiers, design"
+        },
+        {
+          "id": "ck-2",
+          "text": "Cake tasting completed"
+        },
+        {
+          "id": "ck-3",
+          "text": "Cake topper"
+        },
+        {
+          "id": "ck-4",
+          "text": "Confirm delivery time and who receives it"
+        },
+        {
+          "id": "ck-5",
+          "text": "Cake stand and serving set"
+        },
+        {
+          "id": "ck-6",
+          "text": "Dessert table (macarons, donuts, etc.)"
+        },
+        {
+          "id": "ck-7",
+          "text": "Cake served as dessert or separate?"
+        },
+        {
+          "id": "ck-8",
+          "text": "Silk florals for cake"
+        }
+      ]
+    },
+    {
+      "id": "rings",
+      "title": "Wedding Rings",
+      "items": [
+        {
+          "id": "rg-1",
+          "text": "Wedding bands chosen and purchased"
+        },
+        {
+          "id": "rg-2",
+          "text": "Ring sizing confirmed"
+        },
+        {
+          "id": "rg-3",
+          "text": "Engraving"
+        },
+        {
+          "id": "rg-4",
+          "text": "Rings collected and stored safely"
+        },
+        {
+          "id": "rg-5",
+          "text": "Ceremony ring box"
+        },
+        {
+          "id": "rg-6",
+          "text": "Who holds the rings until ceremony?"
+        },
+        {
+          "id": "rg-7",
+          "text": "Engagement ring cleaned and polished"
+        },
+        {
+          "id": "rg-8",
+          "text": "Engagement ring plan during ceremony (other hand? bridesmaid?)"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transport",
+      "items": [
+        {
+          "id": "tr-1",
+          "text": "Bridal car — how is the bride getting to Hillstone?"
+        },
+        {
+          "id": "tr-2",
+          "text": "Bridal party transport"
+        },
+        {
+          "id": "tr-3",
+          "text": "Groom and groomsmen transport"
+        },
+        {
+          "id": "tr-4",
+          "text": "Guest transport info"
+        },
+        {
+          "id": "tr-5",
+          "text": "End-of-night transport for bride and groom"
+        },
+        {
+          "id": "tr-6",
+          "text": "End-of-night guest transport"
+        },
+        {
+          "id": "tr-7",
+          "text": "Parking info for guests"
+        },
+        {
+          "id": "tr-8",
+          "text": "Décor transport — vehicle for centrepieces, vases, signage"
+        }
+      ]
+    },
+    {
+      "id": "accommodation",
+      "title": "Accommodation",
+      "items": [
+        {
+          "id": "acc-1",
+          "text": "Wedding night accommodation"
+        },
+        {
+          "id": "acc-2",
+          "text": "Night-before accommodation"
+        },
+        {
+          "id": "acc-3",
+          "text": "Accommodation suggestions for out-of-town guests"
+        },
+        {
+          "id": "acc-4",
+          "text": "Room block at nearby hotel"
+        }
+      ]
+    },
+    {
+      "id": "guests",
+      "title": "Guest Management",
+      "items": [
+        {
+          "id": "gu-1",
+          "text": "Final guest list confirmed"
+        },
+        {
+          "id": "gu-2",
+          "text": "Dietary requirements collected"
+        },
+        {
+          "id": "gu-3",
+          "text": "Plus-ones managed"
+        },
+        {
+          "id": "gu-4",
+          "text": "Kids policy communicated"
+        },
+        {
+          "id": "gu-5",
+          "text": "Seating plan drafted"
+        },
+        {
+          "id": "gu-6",
+          "text": "Wedding website with schedule, parking, accommodation, dress code"
+        },
+        {
+          "id": "gu-7",
+          "text": "Dress code communicated"
+        }
+      ]
+    },
+    {
+      "id": "gifts",
+      "title": "Gifts & Registry",
+      "items": [
+        {
+          "id": "gi-1",
+          "text": "Gift registry or wishing well set up"
+        },
+        {
+          "id": "gi-2",
+          "text": "Registry details shared with guests"
+        },
+        {
+          "id": "gi-3",
+          "text": "Bridesmaids' gifts"
+        },
+        {
+          "id": "gi-4",
+          "text": "Groomsmen's gifts"
+        },
+        {
+          "id": "gi-5",
+          "text": "Flower girl gifts (×3)"
+        },
+        {
+          "id": "gi-6",
+          "text": "Parents' gifts (both sets)"
+        },
+        {
+          "id": "gi-7",
+          "text": "Gift for each other"
+        },
+        {
+          "id": "gi-8",
+          "text": "Celebrant gift or tip"
+        },
+        {
+          "id": "gi-9",
+          "text": "Track gifts received for thank-you notes"
+        }
+      ]
+    },
+    {
+      "id": "rehearsal",
+      "title": "Rehearsal & Pre-Wedding",
+      "items": [
+        {
+          "id": "reh-1",
+          "text": "Ceremony rehearsal at Hillstone (1–2 days before)"
+        },
+        {
+          "id": "reh-2",
+          "text": "Rehearsal dinner or drinks"
+        },
+        {
+          "id": "reh-3",
+          "text": "Hens party"
+        },
+        {
+          "id": "reh-4",
+          "text": "Bucks party"
+        },
+        {
+          "id": "reh-5",
+          "text": "Bridal shower"
+        }
+      ]
+    },
+    {
+      "id": "dayof",
+      "title": "Day-Of Logistics",
+      "items": [
+        {
+          "id": "do-1",
+          "text": "Detailed day-of timeline — share with all vendors"
+        },
+        {
+          "id": "do-2",
+          "text": "Day-of coordinator or trusted point person"
+        },
+        {
+          "id": "do-3",
+          "text": "Setup checklist — who puts what where"
+        },
+        {
+          "id": "do-4",
+          "text": "Setup team assigned (arriving early for centrepieces, signs, etc.)"
+        },
+        {
+          "id": "do-5",
+          "text": "Pack-down team assigned"
+        },
+        {
+          "id": "do-6",
+          "text": "Vendor contact sheet (name, phone, arrival time)"
+        },
+        {
+          "id": "do-7",
+          "text": "Bridal emergency kit packed"
+        },
+        {
+          "id": "do-8",
+          "text": "Phone charger and portable battery"
+        },
+        {
+          "id": "do-9",
+          "text": "Cash/card for day-of payments or tips"
+        },
+        {
+          "id": "do-10",
+          "text": "Marriage certificate and ID for signing"
+        },
+        {
+          "id": "do-11",
+          "text": "Vow cards or notes"
+        },
+        {
+          "id": "do-12",
+          "text": "Rings — triple-check someone has them"
+        },
+        {
+          "id": "do-13",
+          "text": "Overnight bag for wedding night"
+        },
+        {
+          "id": "do-14",
+          "text": "Morning-of food for getting-ready crew"
+        },
+        {
+          "id": "do-15",
+          "text": "Designate someone to bustle the dress"
+        },
+        {
+          "id": "do-16",
+          "text": "Confirm all vendor arrival times (1 week out)"
+        },
+        {
+          "id": "do-17",
+          "text": "Wet weather contingency confirmed"
+        },
+        {
+          "id": "do-18",
+          "text": "Someone assigned to collect cards/gifts at end of night"
+        }
+      ]
+    },
+    {
+      "id": "honeymoon",
+      "title": "Honeymoon",
+      "items": [
+        {
+          "id": "hon-1",
+          "text": "Destination decided"
+        },
+        {
+          "id": "hon-2",
+          "text": "Flights and accommodation booked"
+        },
+        {
+          "id": "hon-3",
+          "text": "Passports valid (6+ months from travel)"
+        },
+        {
+          "id": "hon-4",
+          "text": "Travel insurance"
+        },
+        {
+          "id": "hon-5",
+          "text": "Visas (if required)"
+        },
+        {
+          "id": "hon-6",
+          "text": "Out-of-office set at work"
+        },
+        {
+          "id": "hon-7",
+          "text": "Pet / plant / house sitter"
+        },
+        {
+          "id": "hon-8",
+          "text": "Book under married or maiden name? (match passport)"
+        }
+      ]
+    },
+    {
+      "id": "postwedding",
+      "title": "Post-Wedding",
+      "items": [
+        {
+          "id": "pw-1",
+          "text": "Thank-you cards (within 3 months)"
+        },
+        {
+          "id": "pw-2",
+          "text": "Marriage certificate lodged with BDM"
+        },
+        {
+          "id": "pw-3",
+          "text": "Order official marriage certificate copies"
+        },
+        {
+          "id": "pw-4",
+          "text": "Name change — licence, passport, bank, Medicare, super, ATO, electoral roll"
+        },
+        {
+          "id": "pw-5",
+          "text": "Dress cleaning and preservation"
+        },
+        {
+          "id": "pw-6",
+          "text": "Share photos with guests"
+        },
+        {
+          "id": "pw-7",
+          "text": "Write vendor reviews"
+        },
+        {
+          "id": "pw-8",
+          "text": "Order wedding album / photo book"
+        }
+      ]
+    }
+  ],
+  "checked": {}
+}
