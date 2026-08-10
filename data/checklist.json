@@ -1337,6 +1337,7 @@
     "ph-7": true,
     "ph-12": true,
     "mus-1": true,
-    "cer-1": true
+    "cer-1": false,
+    "cer-10": true
   }
 }
