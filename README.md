@@ -1,2 +1,2 @@
-# Wedding-Checklist
+# wedding-checklist
 Wedding Checklist
