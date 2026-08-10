@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#b8977a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Wedding">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Wedding Checklist</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --bg2: #f2ede5;
+    --text: #2c2416;
+    --text2: #a09080;
+    --text3: #c8bfb0;
+    --border: #e0d5c7;
+    --accent: #b8977a;
+    --accent2: #a07d60;
+    --green: #5a8a5a;
+    --green-bg: #e8f0e8;
+    --red: #d94040;
+    --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --serif: 'Georgia', 'Times New Roman', serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1612;
+      --bg2: #252018;
+      --text: #e8e0d4;
+      --text2: #8a7e70;
+      --text3: #4a4238;
+      --border: #3a3228;
+      --accent: #c4a482;
+      --accent2: #d4b492;
+      --green: #6a9a6a;
+      --green-bg: #1e2a1e;
+      --red: #e05050;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+
+  .app {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 16px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header .countdown {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .header .venue {
+    font-size: 13px;
+    color: var(--text2);
+  }
+
+  /* Sync bar */
+  .sync-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    background: var(--bg2);
+    border-radius: 10px;
+    font-size: 12px;
+    color: var(--text2);
+    gap: 8px;
+  }
+  .sync-bar button {
+    font-size: 11px;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text2);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .sync-bar button:active { opacity: 0.7; }
+  .sync-status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* Progress */
+  .progress { margin-bottom: 24px; }
+  .progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .progress-label { font-size: 13px; color: var(--text2); }
+  .progress-pct { font-size: 22px; font-weight: 300; }
+  .progress-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* Filters */
+  .filters { display: flex; gap: 8px; margin-bottom: 24px; }
+  .filter-btn {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  /* Sections */
+  .section { margin-bottom: 12px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-toggle {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font);
+    color: var(--text);
+  }
+  .section-title { font-size: 15px; font-weight: 600; }
+  .section-count {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: var(--bg2);
+    color: var(--text2);
+  }
+  .section-count.done { background: var(--green-bg); color: var(--green); }
+  .section-remove {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 4px 8px;
+    color: var(--text3);
+    cursor: pointer;
+    line-height: 1;
+    margin-left: 4px;
+    border-radius: 4px;
+  }
+  .section-remove:active { opacity: 0.5; }
+
+  /* Items */
+  .items { padding-top: 4px; }
+  .item {
+    display: flex;
+    align-items: flex-start;
+  }
+  .item label {
+    display: flex;
+    gap: 10px;
+    padding: 8px 4px;
+    cursor: pointer;
+    flex: 1;
+    align-items: flex-start;
+  }
+  .item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    cursor: pointer;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+  }
+  .item-text {
+    font-size: 14px;
+    line-height: 1.5;
+    transition: color 0.2s;
+  }
+  .item-text.checked {
+    color: var(--text3);
+    text-decoration: line-through;
+  }
+  .item-remove {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    padding: 10px 6px;
+    color: var(--text3);
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  /* Confirm */
+  .confirm-btns {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 0;
+    flex-shrink: 0;
+  }
+  .confirm-btns button {
+    font-size: 10px;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font);
+  }
+  .btn-danger { background: var(--red); color: #fff; }
+  .btn-muted { background: var(--bg2); color: var(--text2); }
+
+  /* Add task */
+  .add-task-btn {
+    border: none;
+    background: transparent;
+    color: var(--accent);
+    font-size: 13px;
+    font-family: var(--font);
+    padding: 8px 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .add-task-btn span { font-size: 16px; line-height: 1; }
+
+  .add-form {
+    display: flex;
+    gap: 8px;
+    padding: 8px 4px;
+    align-items: center;
+  }
+  .add-form input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .add-form input:focus { border-color: var(--accent); }
+  .btn-accent {
+    border: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-family: var(--font);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btn-text {
+    border: none;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: var(--font);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+  }
+
+  /* Add section */
+  .add-section-area {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Setup modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+  }
+  .modal {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 28px 24px;
+    max-width: 420px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .modal p { font-size: 13px; color: var(--text2); margin: 8px 0; line-height: 1.6; }
+  .modal label { display: block; font-size: 12px; font-weight: 600; color: var(--text2); margin: 16px 0 6px; }
+  .modal input[type="text"], .modal input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+  }
+  .modal input:focus { border-color: var(--accent); }
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+  .modal code {
+    font-size: 12px;
+    background: var(--bg2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    word-break: break-all;
+  }
+  .modal ol {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.8;
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text);
+    color: var(--bg);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="app" id="app"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── Default checklist data ───
+const DEFAULT_SECTIONS = [
+  {
+    id: "legal", title: "Legal & Admin", items: [
+      { id: "legal-1", text: "Lodge Notice of Intended Marriage (NOIM) — must be lodged 1–18 months before" },
+      { id: "legal-2", text: "Confirm NOIM is lodged and accepted" },
+      { id: "legal-3", text: "Obtain birth certificates or proof of identity for both parties" },
+      { id: "legal-4", text: "If previously married — obtain divorce certificate or death certificate" },
+      { id: "legal-5", text: "Arrange witnesses (minimum 2 adults) for signing on the day" },
+      { id: "legal-6", text: "Confirm celebrant has your legal paperwork sorted" },
+      { id: "legal-7", text: "Wedding insurance (weather, vendor no-shows, illness)" },
+      { id: "legal-8", text: "Name change checklist ready (licence, passport, bank, Medicare, super, employer, ATO)" },
+    ]
+  },
+  {
+    id: "celebrant", title: "Celebrant / Officiant", items: [
+      { id: "cel-1", text: "Book registered celebrant" },
+      { id: "cel-2", text: "Confirm celebrant availability for 14 Oct 2026" },
+      { id: "cel-3", text: "Meet to discuss ceremony structure and vows" },
+      { id: "cel-4", text: "Decide: traditional vows, personal vows, or a mix" },
+      { id: "cel-5", text: "Write personal vows — allow weeks, not days" },
+      { id: "cel-6", text: "Choose readings or poems (and who will read them)" },
+      { id: "cel-7", text: "Discuss any cultural or religious elements" },
+      { id: "cel-8", text: "Confirm ceremony rehearsal date/time" },
+      { id: "cel-9", text: "Confirm celebrant's fee and payment schedule" },
+      { id: "cel-10", text: "Provide correct name pronunciations" },
+      { id: "cel-11", text: "Confirm PA/microphone needs for courtyard ceremony" },
+    ]
+  },
+  {
+    id: "venue", title: "Venue — Hillstone St Lucia", items: [
+      { id: "ven-1", text: "Confirm final guest count (and cutoff date for changes)" },
+      { id: "ven-2", text: "Confirm courtyard ceremony setup — aisle, seating, arch placement" },
+      { id: "ven-3", text: "Confirm Rosewood Room layout — tables, cake table, gift table, DJ position" },
+      { id: "ven-4", text: "Confirm Library Bar setup for cocktail hour and dancing" },
+      { id: "ven-5", text: "Ask about wet weather backup for courtyard ceremony" },
+      { id: "ven-6", text: "Confirm setup access time on the day" },
+      { id: "ven-7", text: "Confirm pack-down expectations — who collects décor and by when" },
+      { id: "ven-8", text: "Confirm AV equipment (microphone, speakers, projector)" },
+      { id: "ven-9", text: "Ask about power outlet locations" },
+      { id: "ven-10", text: "Confirm parking and guest parking instructions" },
+      { id: "ven-11", text: "Confirm accessibility (wheelchair, step-free paths)" },
+      { id: "ven-12", text: "Confirm noise curfew / music cut-off time" },
+      { id: "ven-13", text: "Confirm bridal suite or getting-ready room" },
+      { id: "ven-14", text: "Discuss candle / open flame policy" },
+      { id: "ven-15", text: "Confirm confetti / petal toss policy" },
+      { id: "ven-16", text: "Confirm vendor load-in access" },
+    ]
+  },
+  {
+    id: "catering", title: "Catering & Drinks (via Hillstone)", items: [
+      { id: "cat-1", text: "Finalise menu selections (entrée, main, dessert)" },
+      { id: "cat-2", text: "Confirm canapés for Library Bar cocktail hour" },
+      { id: "cat-3", text: "Submit dietary requirements and allergies" },
+      { id: "cat-4", text: "Confirm kids' meal options" },
+      { id: "cat-5", text: "Confirm beverage package" },
+      { id: "cat-6", text: "Arrange signature cocktail if desired" },
+      { id: "cat-7", text: "Confirm cake cutting — served as dessert or separate?" },
+      { id: "cat-8", text: "Confirm late-night snack if reception runs late" },
+      { id: "cat-9", text: "Confirm vendor meals (photographer, DJ, etc.)" },
+      { id: "cat-10", text: "Tasting appointment" },
+      { id: "cat-11", text: "Final catering numbers deadline — put in calendar" },
+    ]
+  },
+  {
+    id: "bride", title: "Bride — Attire & Accessories", items: [
+      { id: "br-1", text: "Wedding dress purchased" },
+      { id: "br-2", text: "Dress fittings scheduled (final ~2 weeks before)" },
+      { id: "br-3", text: "Undergarments to suit dress" },
+      { id: "br-4", text: "Shoes — broken in before the day" },
+      { id: "br-5", text: "Veil or headpiece" },
+      { id: "br-6", text: "Jewellery — earrings, necklace, bracelet, hair accessories" },
+      { id: "br-7", text: "Something old, new, borrowed, blue" },
+      { id: "br-8", text: "Garter" },
+      { id: "br-9", text: "Wedding day perfume" },
+      { id: "br-10", text: "Getting-ready robe (for morning-of photos)" },
+      { id: "br-11", text: "Emergency kit: fashion tape, safety pins, stain remover, blister plasters, paracetamol, tissues, deodorant, breath mints" },
+      { id: "br-12", text: "Nice dress hanger for photos" },
+      { id: "br-13", text: "Clutch for reception" },
+      { id: "br-14", text: "Comfy shoes for dancing" },
+      { id: "br-15", text: "Rehearsal dinner outfit" },
+      { id: "br-16", text: "Arrange dress pressing/steaming" },
+      { id: "br-17", text: "Plan dress preservation after wedding" },
+    ]
+  },
+  {
+    id: "groom", title: "Groom — Attire & Accessories", items: [
+      { id: "gr-1", text: "Suit/tux — purchased, hired, or tailored" },
+      { id: "gr-2", text: "Final fitting (2–3 weeks before)" },
+      { id: "gr-3", text: "Shirt, tie/bow tie, pocket square" },
+      { id: "gr-4", text: "Shoes — polished and broken in" },
+      { id: "gr-5", text: "Belt or suspenders" },
+      { id: "gr-6", text: "Cufflinks and watch" },
+      { id: "gr-7", text: "Socks" },
+      { id: "gr-8", text: "Haircut scheduled ~1 week before" },
+      { id: "gr-9", text: "Cologne" },
+      { id: "gr-10", text: "Getting-ready outfit for photos" },
+    ]
+  },
+  {
+    id: "bridesmaids", title: "Bridesmaids (×3)", items: [
+      { id: "bm-1", text: "Bridesmaid dresses chosen and ordered" },
+      { id: "bm-2", text: "Fittings / alterations booked" },
+      { id: "bm-3", text: "Shoes — confirm colour/style" },
+      { id: "bm-4", text: "Jewellery or accessories" },
+      { id: "bm-5", text: "Getting-ready robes (for photos)" },
+      { id: "bm-6", text: "Hair & makeup included in bookings?" },
+      { id: "bm-7", text: "Bridesmaid gifts" },
+      { id: "bm-8", text: "Brief on duties: dress help, bouquet, bustle, aisle lineup" },
+      { id: "bm-9", text: "Confirm each has their bouquet allocated" },
+    ]
+  },
+  {
+    id: "flowergirls", title: "Flower Girls (×3)", items: [
+      { id: "fg-1", text: "Flower girl dresses — chosen, ordered, fitted" },
+      { id: "fg-2", text: "Shoes for each" },
+      { id: "fg-3", text: "Hair accessories — crowns, clips, ribbons" },
+      { id: "fg-4", text: "What will they carry? (petals, wands, hoops, sign)" },
+      { id: "fg-5", text: "Practice walking the aisle at rehearsal" },
+      { id: "fg-6", text: "Assign an adult wrangler for ceremony" },
+      { id: "fg-7", text: "Kid-friendly snacks and activities for reception" },
+      { id: "fg-8", text: "Flower girl gifts" },
+      { id: "fg-9", text: "Confirm parents are okay with timeline/duties" },
+    ]
+  },
+  {
+    id: "groomsmen", title: "Groomsmen / Groom's Party", items: [
+      { id: "gm-1", text: "Suits — matching or coordinated with groom" },
+      { id: "gm-2", text: "Ties, pocket squares, shoes, socks" },
+      { id: "gm-3", text: "Boutonnieres allocated (×4 — groom, best man, groomsmen, fathers?)" },
+      { id: "gm-4", text: "Groomsmen gifts" },
+      { id: "gm-5", text: "Brief on duties: ring, ushering, speeches, positions" },
+      { id: "gm-6", text: "Haircuts / grooming reminder" },
+    ]
+  },
+  {
+    id: "hair-makeup", title: "Hair & Makeup", items: [
+      { id: "hm-1", text: "Book hair stylist" },
+      { id: "hm-2", text: "Book makeup artist" },
+      { id: "hm-3", text: "Hair trial — bring veil/headpiece and dress photos" },
+      { id: "hm-4", text: "Makeup trial — bring dress swatch and jewellery" },
+      { id: "hm-5", text: "Confirm who's included: bride, bridesmaids, mothers, flower girls?" },
+      { id: "hm-6", text: "Create morning-of schedule (who goes first/last)" },
+      { id: "hm-7", text: "Confirm location — does artist come to you?" },
+      { id: "hm-8", text: "Touch-up kit: lipstick, powder, setting spray, bobby pins" },
+      { id: "hm-9", text: "Confirm total cost and payment" },
+    ]
+  },
+  {
+    id: "photo", title: "Photography", items: [
+      { id: "ph-1", text: "Book photographer" },
+      { id: "ph-2", text: "Engagement shoot" },
+      { id: "ph-3", text: "Discuss coverage hours" },
+      { id: "ph-4", text: "Second shooter needed?" },
+      { id: "ph-5", text: "Create shot list: family groups, bridal party, details" },
+      { id: "ph-6", text: "Scout locations at Hillstone" },
+      { id: "ph-7", text: "Golden hour timing (sunset ~6pm Oct Brisbane)" },
+      { id: "ph-8", text: "Confirm turnaround time" },
+      { id: "ph-9", text: "Photo delivery — gallery, USB, prints?" },
+      { id: "ph-10", text: "Social media sharing policy" },
+      { id: "ph-11", text: "Family photo combo list" },
+      { id: "ph-12", text: "Designate someone to wrangle family for group shots" },
+      { id: "ph-13", text: "First-look plan — timing and location" },
+    ]
+  },
+  {
+    id: "video", title: "Videography", items: [
+      { id: "vid-1", text: "Decide if hiring a videographer" },
+      { id: "vid-2", text: "Book videographer" },
+      { id: "vid-3", text: "Discuss style: cinematic, documentary, highlight?" },
+      { id: "vid-4", text: "Confirm coverage hours" },
+      { id: "vid-5", text: "Drone footage — check Hillstone / council rules" },
+      { id: "vid-6", text: "Confirm turnaround and deliverables" },
+      { id: "vid-7", text: "Coordinate with photographer" },
+    ]
+  },
+  {
+    id: "music", title: "Music & Entertainment", items: [
+      { id: "mus-1", text: "Book DJ or live band" },
+      { id: "mus-2", text: "Ceremony — processional song" },
+      { id: "mus-3", text: "Ceremony — pre-ceremony/seating music" },
+      { id: "mus-4", text: "Ceremony — signing of the register" },
+      { id: "mus-5", text: "Ceremony — recessional song" },
+      { id: "mus-6", text: "Cocktail hour music — Library Bar" },
+      { id: "mus-7", text: "Reception entrance song" },
+      { id: "mus-8", text: "First dance song" },
+      { id: "mus-9", text: "Father-daughter / mother-son dance" },
+      { id: "mus-10", text: "Cake cutting song" },
+      { id: "mus-11", text: "Last dance / send-off song" },
+      { id: "mus-12", text: "Do-not-play list" },
+      { id: "mus-13", text: "Must-play list" },
+      { id: "mus-14", text: "Confirm DJ/band power and space needs with venue" },
+      { id: "mus-15", text: "Photo booth or other entertainment" },
+      { id: "mus-16", text: "Kids' entertainment (colouring, games)" },
+    ]
+  },
+  {
+    id: "ceremony", title: "Ceremony — Courtyard Garden", items: [
+      { id: "cer-1", text: "Ceremony arch or arbour" },
+      { id: "cer-2", text: "Aisle runner" },
+      { id: "cer-3", text: "Aisle decorations — lanterns, petals, shepherd hooks" },
+      { id: "cer-4", text: "Confirm seating layout and reserved signs" },
+      { id: "cer-5", text: "Reserved seating signs for front rows" },
+      { id: "cer-6", text: "Unity ceremony element (sand, candle, handfasting?)" },
+      { id: "cer-7", text: "Ring pillow or ring box" },
+      { id: "cer-8", text: "Who carries the rings?" },
+      { id: "cer-9", text: "Petal toss or confetti — check venue policy" },
+      { id: "cer-10", text: "Ceremony program" },
+      { id: "cer-11", text: "Welcome sign" },
+      { id: "cer-12", text: "Unplugged ceremony sign" },
+      { id: "cer-13", text: "Memorial tribute for absent loved ones" },
+      { id: "cer-14", text: "PA system / speakers" },
+      { id: "cer-15", text: "Rehearsal walkthrough scheduled" },
+      { id: "cer-16", text: "Processional order decided" },
+      { id: "cer-17", text: "Who walks the bride down the aisle?" },
+      { id: "cer-18", text: "Signing table — pen, witnesses confirmed" },
+    ]
+  },
+  {
+    id: "reception", title: "Reception — Rosewood Room & Library Bar", items: [
+      { id: "rec-1", text: "Seating chart created" },
+      { id: "rec-2", text: "Seating chart display (printed, mirror, acrylic?)" },
+      { id: "rec-3", text: "Place cards for each guest" },
+      { id: "rec-4", text: "Table numbers or names" },
+      { id: "rec-5", text: "Guest book" },
+      { id: "rec-6", text: "Gift/card box or wishing well sign" },
+      { id: "rec-7", text: "MC — who is running the reception?" },
+      { id: "rec-8", text: "Speeches — confirm who and what order" },
+      { id: "rec-9", text: "Brief speakers on time limits" },
+      { id: "rec-10", text: "Reception timeline: entrances, food, speeches, dances, cake, send-off" },
+      { id: "rec-11", text: "Cake table setup — stand, knife, topper" },
+      { id: "rec-12", text: "Guest favours" },
+      { id: "rec-13", text: "Menu cards on tables" },
+      { id: "rec-14", text: "Bar signage for Library Bar" },
+      { id: "rec-15", text: "Send-off plan — sparklers, bubbles, tunnel?" },
+      { id: "rec-16", text: "Who collects personal items at end of night?" },
+    ]
+  },
+  {
+    id: "florals", title: "DIY Silk Florals", items: [
+      { id: "fl-1", text: "Colour palette and flower types finalised" },
+      { id: "fl-2", text: "All silk flowers, greenery, fillers purchased" },
+      { id: "fl-3", text: "Supplies: floral foam, wire, tape, ribbon, hot glue, tools" },
+      { id: "fl-4", text: "Vases for 2× large 50cm arrangements" },
+      { id: "fl-5", text: "Vessels for 10× table centrepieces" },
+      { id: "fl-6", text: "Bouquet holders for bridal + 3 bridesmaid bouquets" },
+      { id: "fl-7", text: "Boutonniere pins and supplies (×4)" },
+      { id: "fl-8", text: "Ribbon/wrap for bouquet stems" },
+      { id: "fl-9", text: "Practice — make a test centrepiece first" },
+      { id: "fl-10", text: "Build bridal bouquet" },
+      { id: "fl-11", text: "Build 3× bridesmaid bouquets" },
+      { id: "fl-12", text: "Build 4× boutonnieres" },
+      { id: "fl-13", text: "Build 10× table centrepieces" },
+      { id: "fl-14", text: "Build 2× large 50cm vase arrangements" },
+      { id: "fl-15", text: "Ceremony arch florals" },
+      { id: "fl-16", text: "Cake florals" },
+      { id: "fl-17", text: "Flower girl accessories — crowns, wands, baskets?" },
+      { id: "fl-18", text: "Corsages for mothers / grandmothers" },
+      { id: "fl-19", text: "Storage — boxes, tissue, safe keeping" },
+      { id: "fl-20", text: "Transport plan for centrepieces + large vases" },
+      { id: "fl-21", text: "Assign someone to place arrangements on the day" },
+      { id: "fl-22", text: "Steam/reshape any crushed flowers after transport" },
+    ]
+  },
+  {
+    id: "decor", title: "Additional Décor", items: [
+      { id: "dec-1", text: "Overall colour scheme and aesthetic confirmed" },
+      { id: "dec-2", text: "Table linens — cloths, runners, napkins (or venue-supplied?)" },
+      { id: "dec-3", text: "Candles — pillar, taper, tealight, LED (venue policy?)" },
+      { id: "dec-4", text: "Candle holders / votives" },
+      { id: "dec-5", text: "Fairy lights or string lights" },
+      { id: "dec-6", text: "Cake topper" },
+      { id: "dec-7", text: "Card box / wishing well" },
+      { id: "dec-8", text: "Easels for signs" },
+      { id: "dec-9", text: "Welcome sign" },
+      { id: "dec-10", text: "All signage: bar, seating, hashtag, guest book, gifts" },
+      { id: "dec-11", text: "Photo backdrop or feature wall" },
+      { id: "dec-12", text: "Confirm venue supplies vs what you're bringing" },
+    ]
+  },
+  {
+    id: "stationery", title: "Stationery & Signage", items: [
+      { id: "st-1", text: "Save the dates — sent" },
+      { id: "st-2", text: "Invitations sent (8–10 weeks before)" },
+      { id: "st-3", text: "RSVP tracking system set up" },
+      { id: "st-4", text: "RSVP deadline set" },
+      { id: "st-5", text: "Chase non-responders" },
+      { id: "st-6", text: "Ceremony programs" },
+      { id: "st-7", text: "Menu cards" },
+      { id: "st-8", text: "Place cards" },
+      { id: "st-9", text: "Table numbers" },
+      { id: "st-10", text: "Thank-you cards ordered" },
+      { id: "st-11", text: "Directional signs (ceremony → reception, toilets)" },
+    ]
+  },
+  {
+    id: "cake", title: "Cake & Desserts", items: [
+      { id: "ck-1", text: "Wedding cake ordered — flavour, tiers, design" },
+      { id: "ck-2", text: "Cake tasting completed" },
+      { id: "ck-3", text: "Cake topper" },
+      { id: "ck-4", text: "Confirm delivery time and who receives it" },
+      { id: "ck-5", text: "Cake stand and serving set" },
+      { id: "ck-6", text: "Dessert table (macarons, donuts, etc.)" },
+      { id: "ck-7", text: "Cake served as dessert or separate?" },
+      { id: "ck-8", text: "Silk florals for cake" },
+    ]
+  },
+  {
+    id: "rings", title: "Wedding Rings", items: [
+      { id: "rg-1", text: "Wedding bands chosen and purchased" },
+      { id: "rg-2", text: "Ring sizing confirmed" },
+      { id: "rg-3", text: "Engraving" },
+      { id: "rg-4", text: "Rings collected and stored safely" },
+      { id: "rg-5", text: "Ceremony ring box" },
+      { id: "rg-6", text: "Who holds the rings until ceremony?" },
+      { id: "rg-7", text: "Engagement ring cleaned and polished" },
+      { id: "rg-8", text: "Engagement ring plan during ceremony (other hand? bridesmaid?)" },
+    ]
+  },
+  {
+    id: "transport", title: "Transport", items: [
+      { id: "tr-1", text: "Bridal car — how is the bride getting to Hillstone?" },
+      { id: "tr-2", text: "Bridal party transport" },
+      { id: "tr-3", text: "Groom and groomsmen transport" },
+      { id: "tr-4", text: "Guest transport info" },
+      { id: "tr-5", text: "End-of-night transport for bride and groom" },
+      { id: "tr-6", text: "End-of-night guest transport" },
+      { id: "tr-7", text: "Parking info for guests" },
+      { id: "tr-8", text: "Décor transport — vehicle for centrepieces, vases, signage" },
+    ]
+  },
+  {
+    id: "accommodation", title: "Accommodation", items: [
+      { id: "acc-1", text: "Wedding night accommodation" },
+      { id: "acc-2", text: "Night-before accommodation" },
+      { id: "acc-3", text: "Accommodation suggestions for out-of-town guests" },
+      { id: "acc-4", text: "Room block at nearby hotel" },
+    ]
+  },
+  {
+    id: "guests", title: "Guest Management", items: [
+      { id: "gu-1", text: "Final guest list confirmed" },
+      { id: "gu-2", text: "Dietary requirements collected" },
+      { id: "gu-3", text: "Plus-ones managed" },
+      { id: "gu-4", text: "Kids policy communicated" },
+      { id: "gu-5", text: "Seating plan drafted" },
+      { id: "gu-6", text: "Wedding website with schedule, parking, accommodation, dress code" },
+      { id: "gu-7", text: "Dress code communicated" },
+    ]
+  },
+  {
+    id: "gifts", title: "Gifts & Registry", items: [
+      { id: "gi-1", text: "Gift registry or wishing well set up" },
+      { id: "gi-2", text: "Registry details shared with guests" },
+      { id: "gi-3", text: "Bridesmaids' gifts" },
+      { id: "gi-4", text: "Groomsmen's gifts" },
+      { id: "gi-5", text: "Flower girl gifts (×3)" },
+      { id: "gi-6", text: "Parents' gifts (both sets)" },
+      { id: "gi-7", text: "Gift for each other" },
+      { id: "gi-8", text: "Celebrant gift or tip" },
+      { id: "gi-9", text: "Track gifts received for thank-you notes" },
+    ]
+  },
+  {
+    id: "rehearsal", title: "Rehearsal & Pre-Wedding", items: [
+      { id: "reh-1", text: "Ceremony rehearsal at Hillstone (1–2 days before)" },
+      { id: "reh-2", text: "Rehearsal dinner or drinks" },
+      { id: "reh-3", text: "Hens party" },
+      { id: "reh-4", text: "Bucks party" },
+      { id: "reh-5", text: "Bridal shower" },
+    ]
+  },
+  {
+    id: "dayof", title: "Day-Of Logistics", items: [
+      { id: "do-1", text: "Detailed day-of timeline — share with all vendors" },
+      { id: "do-2", text: "Day-of coordinator or trusted point person" },
+      { id: "do-3", text: "Setup checklist — who puts what where" },
+      { id: "do-4", text: "Setup team assigned (arriving early for centrepieces, signs, etc.)" },
+      { id: "do-5", text: "Pack-down team assigned" },
+      { id: "do-6", text: "Vendor contact sheet (name, phone, arrival time)" },
+      { id: "do-7", text: "Bridal emergency kit packed" },
+      { id: "do-8", text: "Phone charger and portable battery" },
+      { id: "do-9", text: "Cash/card for day-of payments or tips" },
+      { id: "do-10", text: "Marriage certificate and ID for signing" },
+      { id: "do-11", text: "Vow cards or notes" },
+      { id: "do-12", text: "Rings — triple-check someone has them" },
+      { id: "do-13", text: "Overnight bag for wedding night" },
+      { id: "do-14", text: "Morning-of food for getting-ready crew" },
+      { id: "do-15", text: "Designate someone to bustle the dress" },
+      { id: "do-16", text: "Confirm all vendor arrival times (1 week out)" },
+      { id: "do-17", text: "Wet weather contingency confirmed" },
+      { id: "do-18", text: "Someone assigned to collect cards/gifts at end of night" },
+    ]
+  },
+  {
+    id: "honeymoon", title: "Honeymoon", items: [
+      { id: "hon-1", text: "Destination decided" },
+      { id: "hon-2", text: "Flights and accommodation booked" },
+      { id: "hon-3", text: "Passports valid (6+ months from travel)" },
+      { id: "hon-4", text: "Travel insurance" },
+      { id: "hon-5", text: "Visas (if required)" },
+      { id: "hon-6", text: "Out-of-office set at work" },
+      { id: "hon-7", text: "Pet / plant / house sitter" },
+      { id: "hon-8", text: "Book under married or maiden name? (match passport)" },
+    ]
+  },
+  {
+    id: "postwedding", title: "Post-Wedding", items: [
+      { id: "pw-1", text: "Thank-you cards (within 3 months)" },
+      { id: "pw-2", text: "Marriage certificate lodged with BDM" },
+      { id: "pw-3", text: "Order official marriage certificate copies" },
+      { id: "pw-4", text: "Name change — licence, passport, bank, Medicare, super, ATO, electoral roll" },
+      { id: "pw-5", text: "Dress cleaning and preservation" },
+      { id: "pw-6", text: "Share photos with guests" },
+      { id: "pw-7", text: "Write vendor reviews" },
+      { id: "pw-8", text: "Order wedding album / photo book" },
+    ]
+  },
+];
+
+// ─── App State ───
+let state = {
+  sections: JSON.parse(JSON.stringify(DEFAULT_SECTIONS)),
+  checked: {},
+  expanded: {},
+  filter: 'all',
+  addingTo: null,
+  confirmDelete: null,
+  confirmDeleteSection: null,
+  showAddSection: false,
+  showSetup: false,
+};
+
+// ─── GitHub Storage ───
+function getGitHubConfig() {
+  try {
+    return JSON.parse(localStorage.getItem('gh_config') || 'null');
+  } catch { return null; }
+}
+
+function setGitHubConfig(config) {
+  localStorage.setItem('gh_config', JSON.stringify(config));
+}
+
+function getSyncStatus() {
+  return localStorage.getItem('sync_status') || 'Not connected';
+}
+function setSyncStatus(s) {
+  localStorage.setItem('sync_status', s);
+}
+
+async function ghSave(data) {
+  const cfg = getGitHubConfig();
+  if (!cfg) return;
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+  const url = `https://api.github.com/repos/${cfg.repo}/contents/${cfg.path}`;
+
+  try {
+    // Get current file SHA
+    let sha = null;
+    try {
+      const existing = await fetch(url, {
+        headers: { 'Authorization': `Bearer ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (existing.ok) {
+        const json = await existing.json();
+        sha = json.sha;
+      }
+    } catch {}
+
+    const body = {
+      message: 'Update wedding checklist',
+      content: content,
+    };
+    if (sha) body.sha = sha;
+
+    const res = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${cfg.token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (res.ok) {
+      const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      setSyncStatus(`Synced at ${now}`);
+    } else {
+      const err = await res.json();
+      setSyncStatus(`Sync failed: ${err.message || res.status}`);
+    }
+  } catch (e) {
+    setSyncStatus(`Sync failed: ${e.message}`);
+  }
+  render();
+}
+
+async function ghLoad() {
+  const cfg = getGitHubConfig();
+  if (!cfg) return null;
+
+  const url = `https://api.github.com/repos/${cfg.repo}/contents/${cfg.path}`;
+  try {
+    const res = await fetch(url, {
+      headers: { 'Authorization': `Bearer ${cfg.token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) {
+      if (res.status === 404) {
+        setSyncStatus('Connected — no data yet');
+        return null;
+      }
+      setSyncStatus(`Load failed: ${res.status}`);
+      return null;
+    }
+    const json = await res.json();
+    const decoded = decodeURIComponent(escape(atob(json.content.replace(/\n/g, ''))));
+    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    setSyncStatus(`Synced at ${now}`);
+    return JSON.parse(decoded);
+  } catch (e) {
+    setSyncStatus(`Load failed: ${e.message}`);
+    return null;
+  }
+}
+
+// ─── Local storage fallback ───
+function saveLocal() {
+  const data = { sections: state.sections, checked: state.checked };
+  localStorage.setItem('wedding_local', JSON.stringify(data));
+  ghSave(data); // async, fire-and-forget
+}
+
+function loadLocal() {
+  try {
+    return JSON.parse(localStorage.getItem('wedding_local') || 'null');
+  } catch { return null; }
+}
+
+// ─── Toast ───
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// ─── Helper ───
+function genId() { return 'c-' + Date.now() + '-' + Math.random().toString(36).slice(2,6); }
+
+function getDaysUntil() {
+  return Math.ceil((new Date(2026, 9, 14) - new Date()) / (1000*60*60*24));
+}
+
+function getStats(section) {
+  const total = section.items.length;
+  const done = section.items.filter(i => state.checked[i.id]).length;
+  return { total, done };
+}
+
+// ─── Render ───
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function render() {
+  const totalItems = state.sections.reduce((s,c) => s + c.items.length, 0);
+  const doneItems = Object.values(state.checked).filter(Boolean).length;
+  const pct = totalItems > 0 ? Math.round((doneItems/totalItems)*100) : 0;
+  const days = getDaysUntil();
+  const cfg = getGitHubConfig();
+  const syncStatus = getSyncStatus();
+
+  let filtered = state.sections.map(section => {
+    if (state.filter === 'all') return section;
+    const items = section.items.filter(i =>
+      state.filter === 'done' ? state.checked[i.id] : !state.checked[i.id]
+    );
+    return { ...section, items };
+  }).filter(s => state.filter === 'all' || s.items.length > 0);
+
+  let html = '';
+
+  // Header
+  html += `<div class="header">
+    <div class="countdown">${days > 0 ? days + ' days to go' : days === 0 ? "Today's the day!" : 'Congratulations!'}</div>
+    <h1>Wedding Checklist</h1>
+    <div class="venue">14 October 2026 · Hillstone St Lucia</div>
+  </div>`;
+
+  // Sync bar
+  html += `<div class="sync-bar">
+    <span class="sync-status">${cfg ? esc(syncStatus) : 'Local only — connect GitHub to sync'}</span>
+    <button onclick="openSetup()">⚙ ${cfg ? 'Settings' : 'Connect GitHub'}</button>
+    ${cfg ? '<button onclick="doSync()">↻ Sync</button>' : ''}
+  </div>`;
+
+  // Progress
+  html += `<div class="progress">
+    <div class="progress-top">
+      <span class="progress-label">${doneItems} of ${totalItems} tasks</span>
+      <span class="progress-pct" style="color:${pct===100?'var(--green)':'var(--text)'}">${pct}%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%;${pct===100?'background:var(--green)':''}"></div></div>
+  </div>`;
+
+  // Filters
+  html += `<div class="filters">
+    ${['all','pending','done'].map(f => `
+      <button class="filter-btn${state.filter===f?' active':''}" onclick="setFilter('${f}')">${f==='all'?'All':f==='pending'?'To do':'Done'}</button>
+    `).join('')}
+  </div>`;
+
+  // Sections
+  filtered.forEach(section => {
+    const orig = state.sections.find(s => s.id === section.id);
+    const stats = getStats(orig);
+    const exp = state.expanded[section.id] !== false;
+
+    html += `<div class="section">`;
+    html += `<div class="section-header">`;
+    html += `<button class="section-toggle" onclick="toggleSection('${section.id}')">
+      <span class="section-title">${exp?'▾':'▸'} ${esc(section.title)}</span>
+      <span class="section-count${stats.done===stats.total&&stats.total>0?' done':''}">${stats.done}/${stats.total}</span>
+    </button>`;
+
+    if (state.confirmDeleteSection === section.id) {
+      html += `<div class="confirm-btns">
+        <button class="btn-danger" onclick="removeSection('${section.id}')">Remove</button>
+        <button class="btn-muted" onclick="cancelDeleteSection()">Keep</button>
+      </div>`;
+    } else {
+      html += `<button class="section-remove" onclick="confirmDeleteSection('${section.id}')" title="Remove section">✕</button>`;
+    }
+    html += `</div>`;
+
+    if (exp) {
+      html += `<div class="items">`;
+      section.items.forEach(item => {
+        const chk = state.checked[item.id];
+        html += `<div class="item">
+          <label>
+            <input type="checkbox" ${chk?'checked':''} onchange="toggleItem('${item.id}')">
+            <span class="item-text${chk?' checked':''}">${esc(item.text)}</span>
+          </label>`;
+
+        if (state.confirmDelete === item.id) {
+          html += `<div class="confirm-btns">
+            <button class="btn-danger" onclick="removeItem('${section.id}','${item.id}')">Yes</button>
+            <button class="btn-muted" onclick="cancelDelete()">No</button>
+          </div>`;
+        } else {
+          html += `<button class="item-remove" onclick="confirmDeleteItem('${item.id}')" title="Remove">✕</button>`;
+        }
+        html += `</div>`;
+      });
+
+      if (state.addingTo === section.id) {
+        html += `<div class="add-form">
+          <input type="text" id="newItemInput" placeholder="Type a new task..." onkeydown="handleAddKey(event,'${section.id}')">
+          <button class="btn-accent" onclick="addItem('${section.id}')">Add</button>
+          <button class="btn-text" onclick="cancelAdd()">Cancel</button>
+        </div>`;
+      } else {
+        html += `<button class="add-task-btn" onclick="startAdd('${section.id}')"><span>+</span> Add task</button>`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+
+  // Add section
+  html += `<div class="add-section-area">`;
+  if (state.showAddSection) {
+    html += `<div class="add-form">
+      <input type="text" id="newSectionInput" placeholder="New section name..." onkeydown="handleAddSectionKey(event)">
+      <button class="btn-accent" onclick="addSection()">Add</button>
+      <button class="btn-text" onclick="cancelAddSection()">Cancel</button>
+    </div>`;
+  } else {
+    html += `<button class="add-task-btn" onclick="startAddSection()"><span>+</span> Add new section</button>`;
+  }
+  html += `</div>`;
+
+  html += `<div class="footer">✓ Changes save locally and sync to GitHub</div>`;
+
+  // Setup modal
+  if (state.showSetup) {
+    const c = cfg || {};
+    html += `<div class="modal-overlay" onclick="if(event.target===this)closeSetup()">
+      <div class="modal">
+        <h2>GitHub Sync</h2>
+        <p>Your data saves to <code>data/checklist.json</code> in this same repo.</p>
+        <ol>
+          <li>Go to <strong>GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens</strong></li>
+          <li>Create a token scoped to your <code>wedding-checklist</code> repo with <strong>Contents: Read and write</strong></li>
+        </ol>
+        <label>Repository (owner/repo)</label>
+        <input type="text" id="ghRepo" placeholder="yourname/wedding-checklist" value="${esc(c.repo||'')}">
+        <label>File path</label>
+        <input type="text" id="ghPath" value="${esc(c.path||'data/checklist.json')}" style="color:var(--text2)">
+        <label>Personal access token</label>
+        <input type="password" id="ghToken" placeholder="github_pat_..." value="${esc(c.token||'')}">
+        <div class="modal-actions">
+          ${cfg ? '<button class="btn-text" onclick="disconnectGH()" style="margin-right:auto;color:var(--red)">Disconnect</button>' : ''}
+          <button class="btn-text" onclick="closeSetup()">Cancel</button>
+          <button class="btn-accent" onclick="saveSetup()">Save & Sync</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('app').innerHTML = html;
+
+  // Auto-focus inputs
+  if (state.addingTo) {
+    const el = document.getElementById('newItemInput');
+    if (el) el.focus();
+  }
+  if (state.showAddSection) {
+    const el = document.getElementById('newSectionInput');
+    if (el) el.focus();
+  }
+}
+
+// ─── Actions ───
+window.setFilter = f => { state.filter = f; render(); };
+window.toggleSection = id => { state.expanded[id] = state.expanded[id] === false ? true : false; render(); };
+
+window.toggleItem = id => {
+  state.checked[id] = !state.checked[id];
+  saveLocal();
+  render();
+};
+
+window.confirmDeleteItem = id => { state.confirmDelete = id; render(); };
+window.cancelDelete = () => { state.confirmDelete = null; render(); };
+window.removeItem = (secId, itemId) => {
+  const sec = state.sections.find(s => s.id === secId);
+  if (sec) sec.items = sec.items.filter(i => i.id !== itemId);
+  delete state.checked[itemId];
+  state.confirmDelete = null;
+  saveLocal();
+  render();
+};
+
+window.confirmDeleteSection = id => { state.confirmDeleteSection = id; render(); };
+window.cancelDeleteSection = () => { state.confirmDeleteSection = null; render(); };
+window.removeSection = id => {
+  const sec = state.sections.find(s => s.id === id);
+  if (sec) sec.items.forEach(i => delete state.checked[i.id]);
+  state.sections = state.sections.filter(s => s.id !== id);
+  state.confirmDeleteSection = null;
+  saveLocal();
+  render();
+};
+
+window.startAdd = secId => { state.addingTo = secId; render(); };
+window.cancelAdd = () => { state.addingTo = null; render(); };
+window.addItem = secId => {
+  const input = document.getElementById('newItemInput');
+  const text = input?.value?.trim();
+  if (!text) return;
+  const sec = state.sections.find(s => s.id === secId);
+  if (sec) sec.items.push({ id: genId(), text });
+  state.addingTo = null;
+  saveLocal();
+  render();
+};
+window.handleAddKey = (e, secId) => {
+  if (e.key === 'Enter') addItem(secId);
+  if (e.key === 'Escape') cancelAdd();
+};
+
+window.startAddSection = () => { state.showAddSection = true; render(); };
+window.cancelAddSection = () => { state.showAddSection = false; render(); };
+window.addSection = () => {
+  const input = document.getElementById('newSectionInput');
+  const name = input?.value?.trim();
+  if (!name) return;
+  const id = 'sec-' + Date.now();
+  state.sections.push({ id, title: name, items: [] });
+  state.expanded[id] = true;
+  state.showAddSection = false;
+  saveLocal();
+  render();
+};
+window.handleAddSectionKey = e => {
+  if (e.key === 'Enter') addSection();
+  if (e.key === 'Escape') cancelAddSection();
+};
+
+// ─── Setup modal ───
+window.openSetup = () => { state.showSetup = true; render(); };
+window.closeSetup = () => { state.showSetup = false; render(); };
+
+window.saveSetup = async () => {
+  const repo = document.getElementById('ghRepo')?.value?.trim();
+  const path = document.getElementById('ghPath')?.value?.trim() || 'checklist.json';
+  const token = document.getElementById('ghToken')?.value?.trim();
+
+  if (!repo || !token) {
+    showToast('Please fill in repo and token');
+    return;
+  }
+
+  setGitHubConfig({ repo, path, token });
+  setSyncStatus('Connecting...');
+  state.showSetup = false;
+  render();
+
+  // Try to load remote data
+  const remote = await ghLoad();
+  if (remote && remote.sections) {
+    state.sections = remote.sections;
+    state.checked = remote.checked || {};
+    localStorage.setItem('wedding_local', JSON.stringify(remote));
+    showToast('Loaded from GitHub');
+  } else {
+    // Push local data to GitHub
+    await ghSave({ sections: state.sections, checked: state.checked });
+    showToast('Connected & synced');
+  }
+  render();
+};
+
+window.disconnectGH = () => {
+  localStorage.removeItem('gh_config');
+  setSyncStatus('Not connected');
+  state.showSetup = false;
+  showToast('GitHub disconnected');
+  render();
+};
+
+window.doSync = async () => {
+  setSyncStatus('Syncing...');
+  render();
+  const remote = await ghLoad();
+  if (remote && remote.sections) {
+    state.sections = remote.sections;
+    state.checked = remote.checked || {};
+    localStorage.setItem('wedding_local', JSON.stringify(remote));
+    showToast('Synced from GitHub');
+  }
+  render();
+};
+
+// ─── Init ───
+async function init() {
+  // Load local first (instant)
+  const local = loadLocal();
+  if (local) {
+    state.sections = local.sections || state.sections;
+    state.checked = local.checked || {};
+  }
+  render();
+
+  // Then try GitHub
+  const cfg = getGitHubConfig();
+  if (cfg) {
+    const remote = await ghLoad();
+    if (remote && remote.sections) {
+      state.sections = remote.sections;
+      state.checked = remote.checked || {};
+      localStorage.setItem('wedding_local', JSON.stringify(remote));
+    }
+    render();
+  }
+}
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').catch(() => {});
+}
+
+init();
+</script>
+</body>
+</html>
