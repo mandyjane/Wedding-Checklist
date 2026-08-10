@@ -1157,10 +1157,6 @@
         {
           "id": "reh-4",
           "text": "Bucks party"
-        },
-        {
-          "id": "reh-5",
-          "text": "Bridal shower"
         }
       ]
     },
@@ -1356,6 +1352,6 @@
     "hon-1": true,
     "c-1786353311616-txk5": false,
     "do-17": true,
-    "do-15": true
+    "do-15": false
   }
 }
