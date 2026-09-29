@@ -167,10 +167,6 @@
           "text": "Confirm beverage package"
         },
         {
-          "id": "cat-6",
-          "text": "Arrange signature cocktail if desired"
-        },
-        {
           "id": "cat-7",
           "text": "Confirm cake cutting — served as dessert or separate?"
         },
@@ -1380,7 +1376,6 @@
     "cat-2": true,
     "cat-3": true,
     "cat-4": true,
-    "cat-5": true,
-    "cat-6": true
+    "cat-5": true
   }
 }
