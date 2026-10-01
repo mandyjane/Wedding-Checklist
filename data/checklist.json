@@ -1370,6 +1370,8 @@
     "cer-4": true,
     "cer-8": true,
     "cer-14": true,
-    "cer-17": false
+    "cer-17": true,
+    "cer-18": true,
+    "cer-16": true
   }
 }
