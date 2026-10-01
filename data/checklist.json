@@ -889,10 +889,6 @@
           "text": "Ring sizing confirmed"
         },
         {
-          "id": "rg-3",
-          "text": "Engraving"
-        },
-        {
           "id": "rg-4",
           "text": "Rings collected and stored safely"
         },
@@ -1384,6 +1380,7 @@
     "ck-7": true,
     "ck-8": true,
     "rg-1": true,
-    "rg-2": true
+    "rg-2": true,
+    "rg-4": true
   }
 }
