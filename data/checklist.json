@@ -859,10 +859,6 @@
           "text": "Wedding cake ordered — flavour, tiers, design"
         },
         {
-          "id": "ck-3",
-          "text": "Cake topper"
-        },
-        {
           "id": "ck-4",
           "text": "Confirm delivery time and who receives it"
         },
@@ -1386,6 +1382,6 @@
     "st-8": true,
     "st-9": true,
     "st-10": false,
-    "ck-1": false
+    "ck-1": true
   }
 }
