@@ -1379,6 +1379,8 @@
     "br-6": true,
     "br-8": true,
     "br-14": false,
-    "bm-1": true
+    "bm-1": true,
+    "bm-3": true,
+    "bm-4": true
   }
 }
