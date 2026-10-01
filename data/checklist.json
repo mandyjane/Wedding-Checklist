@@ -729,10 +729,6 @@
           "text": "Build 2× large 50cm vase arrangements"
         },
         {
-          "id": "fl-15",
-          "text": "Ceremony arch florals"
-        },
-        {
           "id": "fl-16",
           "text": "Cake florals"
         },
@@ -1385,6 +1381,7 @@
     "fl-6": true,
     "fl-7": true,
     "fl-8": true,
-    "fl-11": true
+    "fl-11": true,
+    "fl-12": true
   }
 }
