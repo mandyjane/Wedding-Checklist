@@ -545,10 +545,6 @@
       "title": "Ceremony — Courtyard Garden",
       "items": [
         {
-          "id": "cer-1",
-          "text": "Ceremony arch or arbour"
-        },
-        {
           "id": "cer-2",
           "text": "Aisle runner"
         },
@@ -1297,7 +1293,6 @@
     "ph-7": true,
     "ph-12": true,
     "mus-1": true,
-    "cer-1": false,
     "cer-10": false,
     "cer-9": true,
     "rec-5": true,
