@@ -1387,6 +1387,7 @@
     "dec-4": true,
     "dec-7": true,
     "dec-8": true,
-    "dec-9": true
+    "dec-9": false,
+    "dec-10": true
   }
 }
