@@ -867,10 +867,6 @@
           "text": "Cake stand and serving set"
         },
         {
-          "id": "ck-6",
-          "text": "Dessert table (macarons, donuts, etc.)"
-        },
-        {
           "id": "ck-7",
           "text": "Cake served as dessert or separate?"
         },
@@ -1384,7 +1380,6 @@
     "st-10": false,
     "ck-1": true,
     "ck-4": true,
-    "ck-5": true,
-    "ck-6": true
+    "ck-5": true
   }
 }
