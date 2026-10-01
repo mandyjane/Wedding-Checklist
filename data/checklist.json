@@ -415,10 +415,6 @@
           "text": "Book makeup artist"
         },
         {
-          "id": "hm-3",
-          "text": "Hair trial — bring veil/headpiece and dress photos"
-        },
-        {
           "id": "hm-4",
           "text": "Makeup trial — bring dress swatch and jewellery"
         },
@@ -1388,6 +1384,7 @@
     "fg-7": true,
     "fg-8": true,
     "fg-9": true,
-    "gm-3": true
+    "gm-3": true,
+    "gm-2": true
   }
 }
