@@ -813,10 +813,6 @@
       "title": "Stationery & Signage",
       "items": [
         {
-          "id": "st-1",
-          "text": "Save the dates — sent"
-        },
-        {
           "id": "st-2",
           "text": "Invitations sent (8–10 weeks before)"
         },
