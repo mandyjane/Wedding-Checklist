@@ -415,10 +415,6 @@
           "text": "Book makeup artist"
         },
         {
-          "id": "hm-4",
-          "text": "Makeup trial — bring dress swatch and jewellery"
-        },
-        {
           "id": "hm-5",
           "text": "Confirm who's included: bride, bridesmaids, mothers, flower girls?"
         },
@@ -1385,6 +1381,7 @@
     "fg-8": true,
     "fg-9": true,
     "gm-3": true,
-    "gm-2": true
+    "gm-2": true,
+    "hm-7": true
   }
 }
