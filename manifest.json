@@ -1,12 +1,11 @@
 {
-  "name": "Wedding Checklist",
-  "short_name": "L&A Wedding",
-  "description": "Wedding planning checklist — 14 Oct 2026",
-  "start_url": "/Wedding-Checklist/",
-  "scope": "/Wedding-Checklist/",
+  "name": "L & A · 14·10·26",
+  "short_name": "L & A",
+  "description": "Wedding day checklists",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#faf7f2",
-  "theme_color": "#b8977a",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
   "orientation": "portrait",
   "icons": [
     {
