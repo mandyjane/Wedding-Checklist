@@ -1347,7 +1347,7 @@ renderContent();
 // Service worker registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js', { scope: '/Wedding-Checklist/' }).catch(() => {});
   });
 }
 </script>
